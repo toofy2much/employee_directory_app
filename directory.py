@@ -18,14 +18,16 @@ def get_employee_details():
 
     # Get employee name from search form (passed in the request object)
     name = request.args.get("employee_name")
+    
+
 
     # If the user didn't type anything, ask them to.
     if not name:
-        flash("Please type in a first name.")
+               flash("Please type in a first name.")
 
     # If the name isn't in our directory, flash a message to the user.
     elif name.lower() not in employee_directory:
-        flash("{name} not found.".format(name=name))
+               flash("{name} not found.".format(name=name))
 
     # We have a name, and it's in our directory. Return that info.
     else:
